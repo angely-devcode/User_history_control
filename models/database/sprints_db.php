@@ -1,6 +1,6 @@
 <?php
 
-class sprints_db implements sprints_db_interface{
+class SprintsDb implements SprintsDbInterface{
 
 private $conexion;
 
@@ -8,7 +8,7 @@ public function __construct($conexion){
     $this->conexion = $conexion;
 }
 
-	public function obtenerTodos()
+	public function getAll()
     {
         $sql = "SELECT * FROM sprints ORDER BY fecha_inicio ASC";
         $resultado = $this->conexion->query($sql);
@@ -20,7 +20,7 @@ public function __construct($conexion){
         return $filas;
     }
 
-    public function obtenerPorId($id)
+    public function getById($id)
     {
         $consulta = $this->conexion->prepare("SELECT * FROM sprints WHERE id = ?");
         $consulta->bind_param("i", $id);
@@ -29,7 +29,7 @@ public function __construct($conexion){
         return $resultado->fetch_assoc();
     }
 
-    public function insertar($sprint)
+    public function insert($sprint)
     {
         $consulta = $this->conexion->prepare("INSERT INTO sprints (nombre, fecha_inicio, fecha_fin) VALUES (?, ?, ?,)");
         $consulta->bind_param("sss", $sprint->nombre,

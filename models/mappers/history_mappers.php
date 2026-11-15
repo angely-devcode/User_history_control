@@ -1,5 +1,5 @@
 <?php
-class history_mappers{
+class HistoryModelMapper{
     public static function mapToEntity($fila){
         $historia = new History();
         $historia->id = $fila['id'];
