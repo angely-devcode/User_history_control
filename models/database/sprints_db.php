@@ -31,7 +31,7 @@ public function __construct($conexion){
 
     public function insert($sprint)
     {
-        $consulta = $this->conexion->prepare("INSERT INTO sprints (nombre, fecha_inicio, fecha_fin) VALUES (?, ?, ?,)");
+        $consulta = $this->conexion->prepare("INSERT INTO sprints (nombre, fecha_inicio, fecha_fin) VALUES (?, ?, ?)");
         $consulta->bind_param("sss", $sprint->nombre,
         $sprint->fecha_inicio,
         $sprint->fecha_fin);

@@ -1,5 +1,5 @@
 <?php
-interface HistoriasRepositoryInterface {
+interface HistoryRepositoryInterface {
     public function listHistory();
     public function listHistoryBySprint($sprintId);
     public function searchHistoryById($id);

@@ -1,5 +1,5 @@
 <?php
-class History_db implements HistoryDbInterface
+class HistoryDb implements HistoryDbInterface
 {
 
     private $conexion;
@@ -47,7 +47,7 @@ class History_db implements HistoryDbInterface
 
     public function insert($historia)
     {
-        $stmt = $this->conexion->prepare("INSERT INTO historias (titulo, descripcion, responsable, estado, puntos, fecha_creacion, fecha_finalizacion, sprint_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?,)");
+        $stmt = $this->conexion->prepare("INSERT INTO historias (titulo, descripcion, responsable, estado, puntos, fecha_creacion, fecha_finalizacion, sprint_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->bind_param(
             "ssssissi",
             $historia->titulo,

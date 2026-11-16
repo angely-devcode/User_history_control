@@ -1,5 +1,5 @@
 <?php
-class HistoryRepository{
+class HistoryRepository implements HistoryRepositoryInterface {
     private $historiasDb;
 
     public function __construct(HistoryDbInterface $historiasDb)

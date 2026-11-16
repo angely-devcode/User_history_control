@@ -6,7 +6,7 @@ class History{
     public $responsable;
     public $estado; //nueva, activa, finalizada, impedimento
     public $puntos;
-    public $fecha_creación;
+    public $fecha_creacion;
     public $fecha_finalizacion;
     public $sprint_id;
 }
